@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Madalene Aza">
+    <meta name="description" content="describe this project in one sentence">
+    <meta name="keyword" content="keyword01, keyword02">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>CSS Grids</title>
+</head>
+<body>
+    <h1 class="heading--main u-margin-bottom-md u-margin-top-md">CSS Grids Guide</h1>
+
+    <p class="body-text col-2">
+        It is a simple guide to CSS grids, where examples can be tested and play around with. It is best to view on a large screen at this time. Also, it is strongly recommended to use Firefox browser as within their dev tools, there is a great tool, CSS Grids Inspector, which helps you to look at your grid layout visually.
+    </p> 
+
+    <h2 class="heading--sub u-margin-bottom-md u-margin-top-md">CSS Grids with Absolute Units</h2>
+
+    <p class="body-text">
+        Creating three columns and two rows. Each column and row have the size of 150px wide and tall. 
+    </p>
+
+    <!-- 1st container -->
+    <div class="grid-container container-px">
+        <div class="item item--1">01st Item</div>
+        <div class="item item--2">02nd Item</div>
+        <div class="item item--3">03rd Item</div>
+        <div class="item item--4">04th Item</div>
+        <div class="item item--5">05th Item</div>
+        <div class="item item--6">06th Item</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-md">Using repeat() Function</h2>
+
+    <p class="body-text u-margin-bottom-sm">
+        Instead of adding and repeating the same value (in the properties of <span class="code">grid-template-columns</span> or <span class="code">grid-template-rows</span>), use the <span class="code">repeat()</span> function. 
+    </p>
+
+    <p class="body-text">
+        In the function parentheses, pass in the first value of how many columns or rows you want, followed by the size of each column or row to be defined.
+    </p>
+
+    <!-- 2nd container -->
+    <div class="grid-container container-rf-01">
+        <div class="item item--1">01st Item</div>
+        <div class="item item--2">02nd Item</div>
+        <div class="item item--3">03rd Item</div>
+        <div class="item item--4">04th Item</div>
+        <div class="item item--5">05th Item</div>
+        <div class="item item--6">06th Item</div>
+    </div>
+
+    <p class="body-text">
+        More than one value can be added to the <span class="code">grid-template-columns</span> property to create different sizes of each column in order. The first two columns are 150px wide, and the last column is 300px.
+    </p>
+
+    <!-- 3rd container -->
+    <div class="grid-container container-rf-02">
+        <div class="item item--1">01st Item</div>
+        <div class="item item--2">02nd Item</div>
+        <div class="item item--3">03rd Item</div>
+        <div class="item item--4">04th Item</div>
+        <div class="item item--5">05th Item</div>
+        <div class="item item--6">06th Item</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Using Fr Unit</h2>
+
+    <p class="body-text">
+        <span class="code">fr</span> is a fractional unit and is known to be a flexible unit. For example, 1fr is 1 part of the available space. As shown below, the first two columns have a set size of 150px per each. The third column is 1fr, which will take up all the remaining space.
+    </p>
+
+    <!-- 4th container -->
+    <div class="grid-container container-fr-01">
+        <div class="item item--1">01st Item</div>
+        <div class="item item--2">02nd Item</div>
+        <div class="item item--3">03rd Item</div>
+        <div class="item item--4">04th Item</div>
+        <div class="item item--5">05th Item</div>
+        <div class="item item--6">06th Item</div>
+    </div>
+
+    <p class="body-text">
+        The defined size of the first two columns are 2fr, and the last column is 1fr. It means within the 1000px wide container. The first two columns will be double the size of the last column. 
+    </p>
+
+    <!-- 5th container -->
+    <div class="grid-container container-fr-02">
+        <div class="item item--1">01st Item</div>
+        <div class="item item--2">02nd Item</div>
+        <div class="item item--3">03rd Item</div>
+        <div class="item item--4">04th Item</div>
+        <div class="item item--5">05th Item</div>
+        <div class="item item--6">06th Item</div>
+    </div>
+
+    <p class="body-text">
+        The first and the last columns has the defined size of 1fr, while the second (middle) column is 2fr. It means the middle column is double the size (width wide) of the other columns. 
+    </p>
+
+    <!-- 6th container -->
+    <div class="grid-container container-fr-03">
+        <div class="item item--1">01st Item</div>
+        <div class="item item--2">02nd Item</div>
+        <div class="item item--3">03rd Item</div>
+        <div class="item item--4">04th Item</div>
+        <div class="item item--5">05th Item</div>
+        <div class="item item--6">06th Item</div>
+    </div>
+
+    <p class="body-text">
+        Fr unit can be used on row height as well. As shown below, the first row is 150px high, and the last row is 1fr, which take up the remaining height of the container.
+    </p>
+
+    <!-- 7th container -->
+    <div class="grid-container container-fr-04">
+        <div class="item item--1">01st Item</div>
+        <div class="item item--2">02nd Item</div>
+        <div class="item item--3">03rd Item</div>
+        <div class="item item--4">04th Item</div>
+        <div class="item item--5">05th Item</div>
+        <div class="item item--6">06th Item</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Positioning the Items on the Grids</h2>
+
+    <p class="body-text u-margin-bottom-sm">
+        Use these properties, <span class="code">grid-row-start</span> and <span class="code">grid-row-end</span>, to change the position of a grid item within the grid container. For example, as shown below, there are two rows, but it has three rows (horizontal) grid lines.
+    </p> 
+
+    <p class="body-text u-margin-bottom-sm">
+        The first line is right at the top of the first row items. The second line is at the bottom of the first row and the top of the second row. The third line is right below the last row items.
+    </p> 
+
+    <p class="body-text">
+        The example shown below is the first grid item (in red) has been moved to the second row (but still within the first column). To move the item there, the grid row line starts at 2, and it ends at 3.
+    </p>
+
+    <!-- 8th container -->
+    <div class="grid-container container-pos-01">
+        <div class="item item--1 ps1-01">01st Item</div>
+        <div class="item item--2 ps1-02">02nd Item</div>
+        <div class="item item--3 ps1-03">03rd Item</div>
+        <div class="item item--4 ps1-04">04th Item</div>
+        <div class="item item--5 ps1-05">05th Item</div>
+        <div class="item item--6 ps1-06">06th Item</div>
+    </div>
+
+    <p class="body-text u-margin-bottom-sm">
+        The grid column (vertical) lines in the example below have 4. The first one starts at right at the left of the first column items. The second line is between the end of the first column items and the start of the second column items. The third line is between the end of the second column items and the start of the third column items. The last (fourth) line is on the right side of the last column items.  
+    </p> 
+
+    <p class="body-text">
+        To move the first grid item (in red) to the second column (and the second row). Set the column and row grid lines to 2 (where it starts) and 3 (where it ends). Other grid items have also been moved around, see code for values of grid lines. You can also use the shorthand property, <span class="code">grid-row</span> or <span class="code">grid-column</span>, which takes in both value of <span class="code">row-start</span> and <span class="code">row-grid</span> / <span class="code">column-start</span> and <span class="code">column-end</span>.
+    </p> 
+
+    <!-- 9th container -->
+    <div class="grid-container container-pos-02">
+        <div class="item item--1 ps2-01">01st Item</div>
+        <div class="item item--2 ps2-02">02nd Item</div>
+        <div class="item item--3 ps2-03">03rd Item</div>
+        <div class="item item--4 ps2-04">04th Item</div>
+        <div class="item item--5 ps2-05">05th Item</div>
+        <div class="item item--6 ps2-06">06th Item</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Spanning the Items on the Grids</h2>
+
+    <p class="body-text">
+        To make a grid item take up more than one column size is to span the grid line number in the <span class="code">grid-column</span> property. For example, to make the first grid item (in red) take up two columns shown below, the grid column line starts at 2, and it ends at 4. The fourth grid item (in pink) will be moved below to the next row.
+    </p> 
+
+    <!-- 10th container -->
+    <div class="grid-container container-span-01">
+        <div class="item item--1 span1-01">01st Item</div>
+        <div class="item item--2 span1-02">02nd Item</div>
+        <div class="item item--3 span1-03">03rd Item</div>
+        <div class="item item--4 span1-04">04th Item</div>
+        <div class="item item--5 span1-05">05th Item</div>
+        <div class="item item--6 span1-06">06th Item</div>
+    </div>
+
+    <p class="body-text u-margin-bottom-sm">
+        Use this property - <span class="code">grid-area</span> to either position and span the grid item in both column and row. The order of value for this property goes like this:  
+    </p>
+    
+    <p class="body-text u-margin-bottom-sm">
+        <span class="code">grid-area: [row-start] / [column-start] / [row-end] / [column-end];</span> 
+    </p>
+    
+    <p class="body-text">
+        In the example below, the value of the fifth grid item (in blue) goes like this: 
+        <br>
+        <span class="code">grid-area: 1 /3 / 2 / 4;</span>
+    </p>
+
+    <!-- 11th container -->
+    <div class="grid-container container-span-02">
+        <div class="item item--1 span2-01">01st Item</div>
+        <div class="item item--2 span2-02">02nd Item</div>
+        <div class="item item--3 span2-03">03rd Item</div>
+        <div class="item item--4 span2-04">04th Item</div>
+        <div class="item item--5 span2-05">05th Item</div>
+        <div class="item item--6 span2-06">06th Item</div>
+    </div>
+
+    <p class="body-text">
+        Grid items can overlap each other if they are all have been set to position in a specific area. For example, the first grid item (in red) has been set to position in the last row and middle column. The third item (in violet) is position in the last row also and spanning from the first column to the second column. Right now, you are not able to see the red item as it is behind the violet item. To get the red item on top of the violet item is to use the <span class="code">z-index</span> property and give it a positive value (like 10 for example).
+    </p> 
+
+    <!-- 12th container -->
+    <div class="grid-container container-span-03">
+        <div class="item item--1 span3-01">01st Item</div>
+        <div class="item item--2 span3-02">02nd Item</div>
+        <div class="item item--3 span3-03">03rd Item</div>
+        <div class="item item--4 span3-04">04th Item</div>
+        <div class="item item--5 span3-05">05th Item</div>
+        <div class="item item--6 span3-06">06th Item</div>
+    </div>
+
+    <p class="body-text u-margin-bottom-sm">
+        There are different ways to set the value to span grid items across the columns and row. For example, the second item (in green) is positioned in the second column and span to the third. It could be written as <span class="code">grid-column: 1/3; </span>
+    </p> 
+
+    <p class="body-text u-margin-bottom-sm">
+         It also could be written as: <span class="code">grid-column: 1/span 2;</span> This means it will span over two columns. It is useful when unsure what grid line it is currently on, but knows how many columns or row to span over.  
+    </p> 
+
+    <p class="body-text">
+        Another useful way is to write it is <span class="code">grid-column: 1/-1;</span> This will span all the way to the end of the column (or row in other cases). It is good for when unsure how many rows or columns there are.
+    </p> 
+
+    <!-- 13th container -->
+    <div class="grid-container container-span-04">
+        <div class="item item--1 span4-01">01st Item</div>
+        <div class="item item--2 span4-02">02nd Item</div>
+        <div class="item item--3 span4-03">03rd Item</div>
+        <div class="item item--4 span4-04">04th Item</div>
+        <div class="item item--5 span4-05">05th Item</div>
+        <div class="item item--6 span4-06">06th Item</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm u-margin-top-md">Giving your Grid Lines a Name</h2>
+
+    <p class="body-text">
+        You can give each grid lines (both vertically and horizontally) names and each grid line can also have more than one name as well. It is best to give them descriptive names. It is done in the <span class="code">grid-template-row</span> and <span class="code">grid-template-column</span> properties with the names in the square brackets (see code for better understanding).
+    </p> 
+
+    <!-- 14th container -->
+    <div class="grid-container container-name-01">
+        <div class="item item--1 name-01">01st Item</div>
+        <div class="item item--2 name-02">02nd Item</div>
+        <div class="item item--3 name-03">03rd Item</div>
+        <div class="item item--4 name-04">04th Item</div>
+        <div class="item item--5 name-05">05th Item</div>
+        <div class="item item--6 name-06">06th Item</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm u-margin-top-md">Positioning the Items by Naming the Areas</h2>
+
+    <p class="body-text u-margin-bottom-sm">
+        Give grid-cells name. It is done in the <span class="code">grid-template-row</span> and <span class="code">grid-template-column</span> properties with the names in the double-quotes (see code for better understanding). Within the double quotes represents either one row or column and the number of values enters in are the number of columns or row.
+    </p>
+        
+     <p class="body-text u-margin-bottom-sm"> 
+        For example, to make the header span across four columns, in the <span class="code">grid-template-column</span> property and within the double quote, place 'head' four times. Then, add the <span class="code">grid-area</span> property in the <span class="code">.header</span> div with value <span class="code">'head'</span>. It will then span across four columns. 
+     </p>
+        
+    <p class="body-text">  
+        It goes the same in the second row where there is the <span class="code">.main</span> div and <span class="code">.side</span> div. In the <span class="code">grid-template-column</span> property, there are three 'main' and one 'side', making a total of four columns. When the value 'main' is added in the <span class="code">grid-area</span> property for <span class="code">.main</span> div, it will span across three columns.
+    </p> 
+
+    <!-- 15th container -->
+    <div class="grid-container container-name-02">
+        <div class="item item--1 header">Header</div>
+        <div class="item item--2 main">Main</div>
+        <div class="item item--3 side">Sidebar</div>
+        <div class="item item--4 footer">Footer</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Explicit Grids Vs. Implicit Grids</h2>
+
+    <p class="body-text">
+        When you generate a set amount of rows or columns and the grid items are set and fit within them, this is explicit grid. But, for example as shown below, if you set two sets of rows and columns, which means it can take the total of four grid items, and you add more than four items. What will happen is the grid container will create grid tracks to add these extra grid items within them. It is known as implicit grids. See code for more information and controls with implicit grids.
+    </p> 
+
+    <!-- 16th container -->
+    <div class="grid-container container-ex-imp-01">
+        <div class="item item--1 ex-imp1-01">Explicit 01</div>
+        <div class="item item--2 ex-imp1-02">Explicit 02</div>
+        <div class="item item--3 ex-imp1-03">Explicit 03</div>
+        <div class="item item--4 ex-imp1-04">Explicit 04</div>
+        <div class="item item--5 ex-imp1-05">Implicit 01</div>
+        <div class="item item--6 ex-imp1-06">Implicit 02</div>
+        <div class="item item--7 ex-imp1-07">Implicit 03</div>
+        <div class="item item--8 ex-imp1-08">Implicit 04</div>
+    </div>
+
+    <p class="body-text">
+        When implicit grids are created, it automatically create grid tracks by adding rows. But, this can also be changed to column layout by using the property: <span class="code">grid-auto-flow: column;</span>
+    </p> 
+
+    <!-- 17th container -->
+    <div class="grid-container container-ex-imp-02">
+        <div class="item item--1 ex-imp2-01">Explicit 01</div>
+        <div class="item item--2 ex-imp2-02">Explicit 02</div>
+        <div class="item item--3 ex-imp2-03">Explicit 03</div>
+        <div class="item item--4 ex-imp2-04">Explicit 04</div>
+        <div class="item item--5 ex-imp2-05">Implicit 01</div>
+        <div class="item item--6 ex-imp2-06">Implicit 02</div>
+        <div class="item item--7 ex-imp2-07">Implicit 03</div>
+        <div class="item item--8 ex-imp2-08">Implicit 04</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Aligning Grids Items</h2>
+
+    <p class="body-text">
+        It will be best viewed using the CSS Grid Inspector tool in Firefox for visualisation purpose. Also, see code for more information.
+    </p> 
+
+    <!-- 18th container -->
+    <div class="grid-container container-align-items">
+        <div class="item item-1 align-items-01">Align items 01</div>
+        <div class="item item-2 align-items-02">Align items 02</div>
+        <div class="item item-3 align-items-03">Align items 03</div>
+        <div class="item item-4 align-items-04">Align items 04</div>
+        <div class="item item-5 align-items-05">Align items 05</div>
+        <div class="item item-6 align-items-06">Align items 06</div>
+        <div class="item item-7 align-items-07">Align items 07</div>
+        <div class="item item-8 align-items-08">Align items 08</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Aligning Grids Tracks</h2>
+
+    <p class="body-text">
+        It will be best viewed using the CSS Grid Inspector tool in Firefox for visualisation purpose. Also, see code for more information.
+    </p> 
+
+    <!-- 19th container -->
+    <div class="grid-container container-align-tracks">
+        <div class="item item--1 align-tracks-01">Align items 01</div>
+        <div class="item item--2 align-tracks-02">Align items 02</div>
+        <div class="item item--3 align-tracks-03">Align items 03</div>
+        <div class="item item--4 align-tracks-04">Align items 04</div>
+        <div class="item item--5 align-tracks-05">Align items 05</div>
+        <div class="item item--6 align-tracks-06">Align items 06</div>
+        <div class="item item--7 align-tracks-07">Align items 07</div>
+        <div class="item item--8 align-tracks-08">Align items 08</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Max-content</h2>
+
+    <p class="body-text">
+        It is a value to set the maximum size for column or row by the contained content without causing a line break.  
+    </p> 
+
+    <!-- 20th container -->
+    <div class="grid-container container-mxcont">
+        <div class="item item--1 mxcont-01">Items 01</div>
+        <div class="item item--2 mxcont-02">Items 02</div>
+        <div class="item item--3 mxcont-03">Items 03</div>
+        <div class="item item--4 mxcont-04">Items 04</div>
+        <div class="item item--5 mxcont-05">Items 05</div>
+        <div class="item item--6 mxcont-06">Items 06</div>
+        <div class="item item--7 mxcont-07">Items 07</div>
+        <div class="item item--8 mxcont-08">CSS Grids are awesome!</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Min-content</h2>
+
+    <p class="body-text">
+        It is a value to set the smallest size for column or row, and fit in the contained content as much as possible.
+    </p> 
+
+    <!-- 21st container -->
+    <div class="grid-container container-mncont">
+        <div class="item item--1 mncont-01">Items 01</div>
+        <div class="item item--2 mncont-02">Items 02</div>
+        <div class="item item--3 mncont-03">Items 03</div>
+        <div class="item item--4 mncont-04">Items 04</div>
+        <div class="item item--5 mncont-05">Items 05</div>
+        <div class="item item--6 mncont-06">Items 06</div>
+        <div class="item item--7 mncont-07">Items 07</div>
+        <div class="item item--8 mncont-08">CSS Grids are awesome to learn!</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Minmax() Function</h2>
+
+    <p class="body-text">
+        It is a function to create a size range where the first value you pass into will be the minimum size and the second value will the maximum size. For example as shown below, two rows has been created and its minimum size is 150px. But it can go as bigger and the maximum it will go is the size enough to squeeze in its contained content. 
+    </p> 
+
+    <!-- 22nd container -->
+    <div class="grid-container container-mnmx">
+        <div class="item item--1 mnmx-01">Items 01</div>
+        <div class="item item--2 mnmx-02">Items 02</div>
+        <div class="item item--3 mnmx-03">Items 03</div>
+        <div class="item item--4 mnmx-04">Items 04</div>
+        <div class="item item--5 mnmx-05">Items 05</div>
+        <div class="item item--6 mnmx-06">Items 06</div>
+        <div class="item item--7 mnmx-07">Items 07</div>
+        <div class="item item--8 mnmx-08">CSS Grids are awesome to learn! Try it out sometimes!</div>
+    </div>
+
+    <h2 class="heading--sub u-margin-bottom-sm">Using auto-fit & auto-fill for responsive layouts</h2>
+
+    <p class="body-text u-margin-bottom-sm">
+        It is useful for creating responsive layout without using media queries. <span class="code">auto-fill</span> and <span class="code">auto-fit</span> are values used in the <span class="code">grid-template-rows</span> or <span class="code">grid-template-columns</span> properties. The difference bewtween the two values are to do with the column's sizing.
+    </p> 
+
+    <p class="body-text">
+        <span class="code">auto-fill</span> is to enable space in the empty column within a row. For example below, there are eight grid items within the 1000px wide grid container. All eight grid items are placed in one row as altogether it is 800px and within the remaining 200px space, it is empty, although technically it does has two columns. 
+    </p> 
+
+    <!-- 23rd container -->
+    <div class="grid-container container-res-01">
+        <div class="item item--1 res-01">Items 01</div>
+        <div class="item item--2 res-02">Items 02</div>
+        <div class="item item--3 res-03">Items 03</div>
+        <div class="item item--4 res-04">Items 04</div>
+        <div class="item item--5 res-05">Items 05</div>
+        <div class="item item--6 res-06">Items 06</div>
+        <div class="item item--7 res-07">Items 07</div>
+        <div class="item item--8 res-08">Items 08</div>
+    </div>-
+
+    <p class="body-text">
+        <span class="code">auto-fit</span> is the opposite. If there are remaining space and all grid-items together are smaller (width-wide) than the container, auto-fit will stretch all the grid-items to fill up space. 
+    </p> 
+
+    <!-- 24th container -->
+    <div class="grid-container container-res-02">
+        <div class="item item--1 res2-01">Items 01</div>
+        <div class="item item--2 res2-02">Items 02</div>
+        <div class="item item--3 res2-03">Items 03</div>
+        <div class="item item--4 res2-04">Items 04</div>
+        <div class="item item--5 res2-05">Items 05</div>
+        <div class="item item--6 res2-06">Items 06</div>
+        <div class="item item--7 res2-07">Items 07</div>
+        <div class="item item--8 res2-08">Items 08</div>
+    </div>
+
+    <footer class="footer">
+        <p class="body-text">
+            I have learned CSS Grid through this <a class="link" href="https://www.udemy.com/course/advanced-css-and-sass/"">Udemy course</a> by Jonas Schmedtmann. 
+        </p>
+    </footer>
+
+</body>
+</html>

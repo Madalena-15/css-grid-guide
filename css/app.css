@@ -1,0 +1,643 @@
+/* These lines of codes are for appearance purposes and has no relation to CSS grids learning */
+
+/* CSS reset --------------------------------------------*/
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  position: relative;
+} 
+
+html {
+  font-size: 62.5%;
+}
+
+/* Typography --------------------------------------------*/
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.heading--main,
+.heading--sub,
+.body-text {
+  text-align: center;
+}
+
+.heading--main {
+  font-size: 5rem;
+}
+
+.heading--sub {
+  font-size: 2.5rem;
+}
+
+.body-text {
+  font-size: 1.9rem;
+  line-height: 2.4rem;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.code {
+  background-color: #eee;
+  color: #f40;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+.link {
+  color: #7aabf3;
+  text-decoration: none;
+}
+
+.footer .body-text {
+  color: #fff;
+  width: 100%;
+}
+
+/* Utils -------------------------------------------------*/
+
+.u-margin-bottom-lg {
+  margin-bottom: 6rem;
+}
+
+.u-margin-bottom-md {
+  margin-bottom: 3rem;
+}
+
+.u-margin-bottom-sm {
+  margin-bottom: 2rem;
+}
+
+.u-margin-top-lg {
+  margin-top: 6rem;
+}
+
+.u-margin-top-md {
+  margin-top: 3rem;
+}
+
+.u-margin-top-sm {
+  margin-top: 2rem;
+}
+
+/* Footer --------------------------------------------*/
+
+.footer {
+  background-color: #444;
+  padding: 2rem;
+}
+
+/* All codes below are related to CSS grids */
+
+/* Containers & items --------------------------------------------*/
+
+/* For almost all containers */
+.grid-container {
+  background-color: #333;
+  margin: 5rem auto;
+  width: 1000px;
+
+  /* this will activate the css grid */
+  display: grid;
+
+  /* Set a vertical gutter */
+  grid-column-gap: 30px;
+
+  /* Set a horizontal gutter */
+  grid-row-gap: 30px;
+}
+
+/* Set paddings for appearance purposes */
+.container-align-tracks > .item,
+.container-align-items > .item,
+.container-mxcont > .item,
+.container-mncont > .item,
+.container-mnmx > .item,
+.container-res-01 > .item,
+.container-res-02 > .item {
+  padding: 10px;
+  }
+
+/* For almost all grid items */
+
+.item {
+  color: #fff;
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+/* Red item */
+.item--1 {
+  background-color: orangered;
+}
+
+/* Green item */
+.item--2 {
+  background-color: darkseagreen;
+}
+
+/* Violet item */
+.item--3 {
+  background-color: blueviolet;
+}
+
+/* Pink item */
+.item--4 {
+  background-color: palevioletred;
+}
+
+/* Blue item */
+.item--5 {
+  background-color: royalblue;
+}
+
+/* Brown item */
+.item--6 {
+  background-color: goldenrod;
+}
+
+/* Coral item */
+.item--7 {
+  background-color: lightcoral;
+}
+
+/* Orange item */
+.item--8 {
+  background-color: orange;
+}
+
+/* 1st container (absolute) --------------------------------------------*/
+
+.container-px {
+  /* Set how many columns it needed. In this case, three */
+  grid-template-columns: 150px 150px 150px;
+  /* Set how many rows it needed. In this case, three */
+  grid-template-rows: 150px 150px;
+}
+
+/* 2nd container (repeat function) ----------------------------------*/
+
+.container-rf-01 {
+  /* 1st value is to set how many columns. In this case, three. */
+  /* 2nd value is to set the size of each column */
+  grid-template-columns: repeat(3, 150px);
+  /* 1st value is to set how many rows. In this case, three. */
+  /* 2nd value is to set the size of each row */
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* 3rd container (repeat function -----------------------------------*/
+
+.container-rf-02 {
+  /* This will create two repeated 150px columns follow by a third 300px÷ column */
+  grid-template-columns: repeat(2, 150px) 300px;
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* 4th container (fr unit) ------------------------------------------*/
+
+.container-fr-01 {
+  /* fr is fractional unit. 1fr is 1 part of the available space */
+  grid-template-columns: repeat(2, 150px) 1fr;
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* 5th container (fr unit) ------------------------------------------*/
+
+.container-fr-02 {
+  grid-template-columns: repeat(2, 2fr) 1fr;
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* 6th container (fr unit) ------------------------------------------*/
+
+.container-fr-03 {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* 7th container (fr unit & longer height) --------------------------*/
+
+.container-fr-04 {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 150px 1fr;
+
+  /* This is to see how fr unit is used in a row */
+  height: 500px;
+}
+
+/* 8th container (item position) ------------------------------------*/
+
+.container-pos-01 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* Red item */
+.ps1-01 {
+  /* Set the size of this item within the row */
+  grid-row-end: 3;
+  grid-row-start: 2;
+}
+
+/* 9th container (item position) ------------------------------------*/
+
+.container-pos-02 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* Red item */
+.ps2-01 {
+  /* Tne previous example shows a longhand property. Use shorthand property */
+  /* Set the position and size of this item within the column */
+  grid-column: 2/3;
+  /* Set the position and size of this item within the row */
+  grid-row: 2/3;
+}
+
+/* Blue item */
+.ps2-05 {
+  /* This is a property to change item's position in both row and column */
+  grid-area: 1/3/2/4;
+
+  /* grid-column: 3/4;
+  grid-row: 1/2; */
+}
+
+/* Brown item */
+.ps2-06 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+/* 10th container (span item) -----------------------------------*/
+
+.container-span-01 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* Red item */
+.span1-01 {
+  /* Span this item within the column from line 2 to line 4 */
+  grid-column: 2/4;
+  grid-row: 2/3;
+}
+
+/* Blue item */
+.span1-05 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+/* Brown item */
+.span1-06 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+/* 11th container (span item) -----------------------------------*/
+
+.container-span-02 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* Red item */
+.span2-01 {
+  grid-column: 2/4;
+  grid-row: 2/3;
+}
+
+/* Violet item */
+.span2-03 {
+  /* Span this item within the column from line 1 to line 3 */
+  grid-column: 1/3;
+}
+
+/* Blue item */
+.span2-05 {
+  grid-area: 1/3/2/4;
+
+  /* Equivalent to this */
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+/* Brown item */
+.span2-06 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+/* 12th container (span item) -----------------------------------*/
+
+.container-span-03 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* Red item */
+.span3-01 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+  /* To place this item on top of the other, uncomment the z-index property */
+  /* z-index: 10; */
+}
+
+/* Violet item */
+.span3-03 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+
+/* Blue item */
+.span3-05 {
+  grid-area: 1/3/2/4;
+}
+
+/* Brown item */
+.span3-06 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+/* 13th container (item position) -----------------------------------*/
+
+.container-span-04 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+/* Red item */
+.span4-01 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  z-index: 10;
+}
+
+/* Green item */
+.span4-02 {
+  /* This is the same as 1/3. What this means is it will span across two grid cells */
+  /* grid-column: 2/span 2; */
+
+  /* Use -1 as a value if you are unsure how many cells you are spanning */
+  grid-column: 2/ -1;
+}
+
+/* Violet item */
+.span4-03 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+
+/* Blue item */
+.span4-05 {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+
+/* Brown item */
+.span4-06 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+/* 14th container (naming grid lines) -------------------------------*/
+
+.container-name-01 {
+  /* Set grid names */
+  grid-template-columns: repeat(4, [col-start] 1fr [col-end]) [grid-end];
+  grid-template-rows: [header-start] 150px [header-end main-start] 200px [main-end footer-start] 150px [footer-end];
+}
+
+/* Red item */
+.name-01 {
+  /* Use grid names instead of grid number */
+  grid-column: col-start 1/ grid-end;
+  grid-row: header-start/header-end;
+}
+
+/* Brown item */
+.name-06 {
+  /* Use grid names instead of grid number */
+  grid-column: col-start 1/ grid-end;
+  grid-row: footer-start/footer-end;
+}
+
+/* 15th container (naming grid areas) -------------------------------*/
+
+.container-name-02 {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 150px 200px 150px;
+
+  /* Name grid areas */
+  /* For example the first four cells will be called 'head' */
+  grid-template-areas: "head head head head"
+                       "main main main side"
+                       "footer footer footer footer";
+}
+
+/* Red item */
+.header {
+  /* The header will have grid area called 'head' */
+  grid-area: head;
+}
+
+/* Green item */
+.main {
+  grid-area: main;
+}
+
+/* Blue item */
+.side {
+  grid-area: side;
+}
+
+/* Brown item */
+.footer {
+  grid-area: footer;
+}
+
+/* 16th container (explicit vs implicit grids) -------------------------------*/
+
+.container-ex-imp-01 {
+  /* The twp implicit grids will add a track with defined height of 100px; */
+  grid-auto-rows: 100px;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+.container-ex-imp-01 > .item {
+  background-color: yellowgreen;
+}
+
+/* 17th container (explicit vs implicit grids) -------------------------------*/
+
+.container-ex-imp-02 {
+  grid-auto-columns: .5fr;
+
+  /* Change the placement from row to column */
+  grid-auto-flow: column;
+  grid-auto-rows: 100px;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+.container-ex-imp-02 > .item {
+  background-color: orangered;
+}
+
+/* 18th container (aligning grid itema) -------------------------------*/
+
+.container-align-items {
+  /* This will vertically align items. Change value to see how else it can be aligned */
+  align-items: end;
+
+  /* This will horizontally align items. Change value to see how else it can be aligned */
+  justify-items: end;
+
+  grid-auto-columns: .5fr;
+  grid-auto-flow: row;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px);
+}
+
+.align-items-01,
+.align-items-02,
+.align-items-03,
+.align-items-05,
+.align-items-06,
+.align-items-08 {
+  background-color: blueviolet;
+}
+
+.align-items-04,
+.align-items-07 {
+  background-color: hotpink;
+}
+
+.align-items-04 {
+  grid-row: 2/span 3;
+
+  /* This is to vertically align an individual item and also override the previous value set in the grid container */
+  /* Change to end to see the difference */
+  /* Values: end | center (there are more) */
+  align-self: start; 
+
+  /* This is to horizontally align an individual item and also override the previous value set in the grid container */
+  /* Change to end to see the difference */
+  /* Values: end | center (there are more) */
+  justify-self: start;
+}
+
+.align-items-07 {
+  grid-column: 1/-1;
+}
+
+/* 19th container (aligning tracks) -------------------------------*/
+
+.container-align-tracks {
+
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(2, 100px);
+
+  /* This will align all the content together vertically across the line. Change value to see the difference */
+  /* Values: end | start (there are more) */
+  align-content: center;
+
+  /* This will align all the content together horizontally across the line. Change value to see the difference */
+  /* Values: end | start (there are more) */
+  justify-content: center;
+
+  /* This is to see how the content are aligned */
+  height: 1000px;
+}
+
+.align-tracks-01,
+.align-tracks-02,
+.align-tracks-03,
+.align-tracks-05,
+.align-tracks-06,
+.align-tracks-08 {
+  background-color: royalblue;
+}
+
+.align-tracks-04,
+.align-tracks-07 {
+  background-color: goldenrod;
+}
+
+.align-tracks-04 {
+  grid-row: 2/span 3;
+
+  /* This is to vertically align an individual item and also override the previous value set in the grid container */
+  /* Change to end to see the difference */
+  /* Values: end | center (there are more) */
+  align-self: start;
+
+  /* This is to horizontally align an individual item and also override the previous value set in the grid container */
+  /* Change to end to see the difference */
+  /* Values: end | center (there are more) */
+  justify-self: start;
+}
+
+.align-tracks-07 {
+  grid-column: 1/-1;
+}
+
+/* 20th container (maxcontent) -------------------------------*/
+
+.container-mxcont {
+    /* The first column size will be as wide fit in the contained content without causing line breaks */
+    grid-template-columns: max-content repeat(2, 1fr) max-content;
+    grid-template-rows: repeat(2, 160px);
+}
+
+/* 21st container (mincontent) -------------------------------*/
+
+.container-mncont {
+  /* The first  column size will be as smallest as possible and fit in the contained content */
+  grid-template-columns: repeat(3, 1fr) min-content;
+  grid-template-rows: min-content 150px;
+}
+
+/* 22nd container (min-max function) -------------------------------*/
+
+.container-mnmx {
+  grid-template-columns: repeat(3, 1fr) min-content;
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+}
+
+/* 23rd container (responsive layout) -------------------------------*/
+
+.container-res-01 {
+  grid-gap: 0;
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-rows: repeat(2, minmax(100px, min-content));
+}
+
+/* 24th container (responsive layout) -------------------------------*/
+
+.container-res-02 {
+  grid-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(2, minmax(100px, min-content));
+
+  /* This is to see how the responsive layout look like with CSS grids */
+  width: 90%;
+}
